@@ -1,5 +1,5 @@
-dys = [0, 1]
-dxs = [1, 0]
+dys = [0, 1, 0, -1]
+dxs = [1, 0, -1, 0]
 
 def can_move(y, x):
     return 0 <= y < n and 0 <= x < n and arr[y][x] == 1
