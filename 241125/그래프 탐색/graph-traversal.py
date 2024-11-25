@@ -18,4 +18,5 @@ for _ in range(m):
 visited = [False]*n
 
 dfs(0)
-print(sum([1 for e in visited if e]) - 1)
+visited[0] = False
+print(sum([1 for e in visited if e]))
