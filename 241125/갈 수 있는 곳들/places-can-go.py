@@ -5,9 +5,12 @@ def can_move(y, x):
 dys = [0, 1, 0, -1]
 dxs = [1, 0, -1, 0]
 def bfs(y, x):
+    if grid[y][x] == 1:
+        return 0
     queue = deque()
+    grid[y][x] = 1
     queue.append((y, x))
-    result = 0
+    result = 1 if grid[y][x] == 0 else 1
     while queue:
         y, x = queue.popleft()
         for dy, dx in zip(dys, dxs):
