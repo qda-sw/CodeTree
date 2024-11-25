@@ -9,14 +9,12 @@ def dfs(y, x):
     for _dy, _dx in zip(dy, dx):
         next_y = y + _dy
         next_x = x + _dx
-        if not can_move(next_y, next_x) or visited[next_y][next_x]:
+        if not can_move(next_y, next_x):
             continue
-        visited[next_y][next_x] = True
+        arr[next_y][next_x] = 0
         dfs(next_y, next_x)
 
 n, m = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(n)]
-visited = [[False for _ in range(m)] for _ in range(n)]
-visited[0][0] = True
 dfs(0, 0)
-print(1 if visited[n-1][m-1] else 0)
+print(1 if arr[n-1][m-1] == 0 else 0)
