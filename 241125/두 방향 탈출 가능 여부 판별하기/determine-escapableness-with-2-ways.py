@@ -17,5 +17,6 @@ def dfs(y, x):
 n, m = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(n)]
 visited = [[False for _ in range(m)] for _ in range(n)]
+visited[0][0] = True
 dfs(0, 0)
 print(1 if visited[n-1][m-1] else 0)
