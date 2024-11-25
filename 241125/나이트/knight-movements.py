@@ -20,7 +20,7 @@ def bfs():
                 visited[ny][nx] = True
                 steps[ny][nx] = steps[y][x] + 1
                 queue.append((ny, nx))
-    return steps[r2-1][c2-1]
+    return steps[r2-1][c2-1] if visited[r2-1][c2-1] else -1
 n = int(input())
 r1, c1, r2, c2 = map(int, input().split())
 print(bfs())
